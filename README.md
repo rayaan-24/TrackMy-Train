@@ -53,6 +53,7 @@ TrackMyTrain/
 │
 └── README.md
 
+```
 🗄️ Database Design
 
 trains – stores train details
@@ -90,9 +91,20 @@ Open in browser:
 
 http://127.0.0.1:5000/
 
-📸 Screenshots
 
-(Add screenshots of Home, Booking, Train Status, Feedback pages here)
+## 📸 Application Screenshots
+
+### 🔹 Home Screen
+![Home Screen](images/Home_page.png)
+
+### 🔹 Booking Screen
+![Booking Screen](images/Booking_page.png)
+
+### 🔹 Train_status Screen
+![Train_status Screen](images/Train_status_page.png)
+
+### 🔹 feedback Screen
+![feedback Screen](images/feedback.png)
 
 🎓 Academic Use
 
@@ -108,13 +120,9 @@ REST APIs
 🔮 Future Enhancements
 
 User authentication (Login / Signup)
-
 Admin dashboard
-
 Real-time train data integration
-
 Online payment gateway
-
 Mobile application version
 
 👨‍💻 Author
