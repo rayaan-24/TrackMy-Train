@@ -79,10 +79,12 @@ pip install flask mysql-connector-python
 
 🗄️ MySQL DATABASE & TABLES (RUN THIS)
 ✅ Create Database
+
 CREATE DATABASE trackmytrain_db;
 USE trackmytrain_db;
 
 🚆 Trains Table
+
 CREATE TABLE trains (
     train_id VARCHAR(10) PRIMARY KEY,
     train_name VARCHAR(100),
@@ -93,6 +95,7 @@ CREATE TABLE trains (
 );
 
 🎟️ Bookings Table
+
 CREATE TABLE bookings (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     passenger_name VARCHAR(100),
@@ -106,6 +109,7 @@ CREATE TABLE bookings (
 );
 
 ⭐ Feedback Table
+
 CREATE TABLE feedback (
     feedback_id INT AUTO_INCREMENT PRIMARY KEY,
     passenger_name VARCHAR(100),
@@ -116,6 +120,7 @@ CREATE TABLE feedback (
 );
 
 🚉 Stations Table
+
 CREATE TABLE stations (
     station_id INT AUTO_INCREMENT PRIMARY KEY,
     station_name VARCHAR(100)
