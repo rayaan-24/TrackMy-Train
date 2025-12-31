@@ -64,6 +64,7 @@ stations – stores station names
 ✔ Foreign key constraint is used between bookings.train_id and trains.train_id to ensure data integrity.
 
 🚀 How to Run the Project Locally
+
 1️⃣ Clone the Repository
 git clone https://github.com/rayaan-24/TrackMy-Train.git
 cd TrackMyTrain
@@ -81,6 +82,7 @@ pip install flask mysql-connector-python
 ✅ Create Database
 
 CREATE DATABASE trackmytrain_db;
+
 USE trackmytrain_db;
 
 🚆 Trains Table
