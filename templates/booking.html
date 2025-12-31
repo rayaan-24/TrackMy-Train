@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Train Ticket - TrackMyTrain</title>
+
+    <!-- FIX: Flask static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>🚆 TrackMy Train</h1>
+    </div>
+    <nav>
+        <ul>
+            <!-- FIX: Flask routing -->
+            <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="{{ url_for('booking') }}"><i class="fas fa-ticket-alt"></i> Book Ticket</a></li>
+            <li><a href="{{ url_for('train_status') }}"><i class="fas fa-train"></i> Train Status</a></li>
+            <li><a href="{{ url_for('feedback') }}"><i class="fas fa-comment"></i> Feedback</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="booking-form">
+    <h2>🎟 Book Your Train Ticket</h2>
+
+    <form action="{{ url_for('booking') }}" method="POST">
+
+        <label for="passenger_name">👤 Full Name:</label>
+        <input type="text" id="passenger_name" name="passenger_name" placeholder="Enter your name" required>
+
+        <label for="email">📧 Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="contact">📞 Contact Number:</label>
+        <input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required>
+
+        <label for="train_id">🚄 Select Train:</label>
+        <select id="train_id" name="train_id" required>
+            <option value="">-- Select a Train --</option>
+            <option value="12345">12345 - Chennai Express</option>
+            <option value="54321">54321 - Bangalore Express</option>
+            <option value="67890">67890 - Mumbai Express</option>
+        </select>
+
+        <label for="journey_date">📅 Journey Date:</label>
+        <input type="date" id="journey_date" name="journey_date" required>
+
+        <label for="class">💺 Seat Class:</label>
+        <select id="class" name="class" required>
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+            <option value="First Class">First Class</option>
+        </select>
+
+        <label for="seat_number">🎫 Seat Preference:</label>
+        <select id="seat_number" name="seat_number">
+            <option value="Window">Window</option>
+            <option value="Aisle">Aisle</option>
+            <option value="No Preference">No Preference</option>
+        </select>
+
+        <input type="hidden" name="fare" value="500">
+
+        <button type="submit">Book Ticket</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2025 TrackMyTrain | All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

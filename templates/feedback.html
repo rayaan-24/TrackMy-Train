@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback - TrackMyTrain</title>
+
+    <!-- FIX: Flask static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <h1>🚆 TrackMy Train</h1>
+      </div>
+      <nav>
+        <ul>
+          <!-- FIX: Flask routing -->
+          <li>
+            <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li>
+            <a href="{{ url_for('booking') }}"
+              ><i class="fas fa-ticket-alt"></i> Book Ticket</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('train_status') }}"
+              ><i class="fas fa-train"></i> Train Status</a
+            >
+          </li>
+          <li>
+            <a href="{{ url_for('feedback') }}"
+              ><i class="fas fa-comment"></i> Feedback</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="feedback-form">
+      <h2>💬 Passenger Feedback</h2>
+      <p>We value your feedback! Please let us know about your experience.</p>
+
+      <!-- Flash Message (still commented – OLD behavior preserved) -->
+      <!--
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+      <div class="flash-message">
+        {% for message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endwith %}
+      -->
+
+      <form action="{{ url_for('feedback') }}" method="POST">
+        <label for="passenger_name">👤 Full Name:</label>
+        <input
+          type="text"
+          id="passenger_name"
+          name="passenger_name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="train_id">🚄 Select Train:</label>
+        <select id="train_id" name="train_id" required>
+          <option value="">-- Select a Train --</option>
+          <option value="12345">12345 - Chennai Express</option>
+          <option value="54321">54321 - Bangalore Express</option>
+          <option value="67890">67890 - Mumbai Express</option>
+        </select>
+
+        <label>⭐ Rate Your Experience:</label>
+        <div class="rating">
+          <input
+            type="radio"
+            name="rating"
+            value="5"
+            id="star5"
+            required
+          /><label for="star5">⭐</label>
+          <input type="radio" name="rating" value="4" id="star4" /><label
+            for="star4"
+            >⭐</label
+          >
+          <input type="radio" name="rating" value="3" id="star3" /><label
+            for="star3"
+            >⭐</label
+          >
+          <input type="radio" name="rating" value="2" id="star2" /><label
+            for="star2"
+            >⭐</label
+          >
+          <input type="radio" name="rating" value="1" id="star1" /><label
+            for="star1"
+            >⭐</label
+          >
+        </div>
+
+        <label for="comments">✍️ Your Comments:</label>
+        <textarea
+          id="comments"
+          name="comments"
+          rows="5"
+          placeholder="Share your thoughts..."
+          required
+        ></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 TrackMyTrain | All Rights Reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrackMyTrain - Real-Time Train Tracking</title>
+
+    <!-- FIX: Flask static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+        <h1>🚆 TrackMy Train</h1>
+    </div>
+    <nav>
+        <ul>
+            <!-- FIX: Flask routing -->
+            <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="{{ url_for('booking') }}"><i class="fas fa-ticket-alt"></i> Book Ticket</a></li>
+            <li><a href="{{ url_for('train_status') }}"><i class="fas fa-train"></i> Train Status</a></li>
+            <li><a href="{{ url_for('feedback') }}"><i class="fas fa-comment"></i> Feedback</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h2>Real-Time Train Tracking & Booking</h2>
+    <p>Track your train live, book tickets seamlessly, and enjoy a hassle-free journey.</p>
+    <div class="cta-buttons">
+        <!-- FIX: Flask routing -->
+        <a href="{{ url_for('train_status') }}" class="btn">🔍 Check Train Status</a>
+        <a href="{{ url_for('feedback') }}" class="btn">💬 Give Feedback</a>
+        <a href="{{ url_for('booking') }}" class="btn">🎟️ Book Ticket Now</a>
+    </div> 
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="feature-box">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Live Tracking</h3>
+        <p>Real-time train location with precise updates.</p>
+    </div>
+    <div class="feature-box">
+        <i class="fas fa-ticket-alt"></i>
+        <h3>Easy Booking</h3>
+        <p>Book train tickets instantly with simple steps.</p>
+    </div>
+    <div class="feature-box">
+        <i class="fas fa-star"></i>
+        <h3>Customer Feedback</h3>
+        <p>Share your travel experience and help us improve.</p>
+    </div>
+</section>
+
+<!-- Live Updates -->
+<section class="live-updates">
+    <h3>🚆 Live Train Updates</h3>
+    <div class="scrolling-text">
+        <span>
+            🚄 Train 12345 (Chennai Exp) is running on time |
+            🚄 Train 54321 (Bangalore Exp) delayed by 10 mins |
+            🚄 Train 67890 (Mumbai Express) has arrived at Katpadi Junction.
+        </span>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>Created by 3 Idiots</p>
+</footer>
+
+</body>
+</html>

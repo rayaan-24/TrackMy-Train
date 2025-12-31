@@ -1,0 +1,715 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(to right, #0f172a, #1e293b); /* Dark navy blue gradient */
+    color: #e0e0e0;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 15, 15, 0.9);
+    padding: 15px 50px;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 26px;
+    color: #facc15; /* Premium Gold */
+}
+
+.navbar a {
+    color: #facc15; 
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 20px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #facc15;
+    text-shadow: 2px 2px 15px rgba(255, 215, 0, 0.5);
+}
+
+.hero p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-direction: row-reverse;  /* Swapped the order of buttons */
+}
+
+.btn {
+    background: linear-gradient(135deg, #facc15, #ffcc00);
+    color: black;
+    padding: 15px 25px;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, #ffcc00, #facc15);
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: space-between; /* Push buttons to left & right */
+    align-items: center left;  /* Keep them aligned */
+    width: 100%; /* Take full width */
+    max-width: 500px; /* Adjust width */
+    margin: 20px auto; /* Center the container */
+}
+
+.cta-buttons .btn {
+    flex: 1; /* Make buttons take equal space */
+    text-align: center;
+    max-width: 200px; /* Limit button width */
+}
+.train-status-container {
+    max-width: 700px;
+    margin: 100px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    text-align: center;
+}
+.train-status-container h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #facc15;
+    text-shadow: 2px 2px 15px rgba(255, 215, 0, 0.5);
+}
+.search-box {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search-box input {
+    padding: 12px;
+    width: 60%;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.search-box button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #facc15;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    background: #ffcc00;
+}
+
+
+/* Search Form */
+.search-train {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    margin: 30px auto;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    text-align: left;
+}
+
+.search-train h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #facc15;
+}
+
+.search-train form {
+    margin-top: 15px;
+}
+
+.search-train input, 
+.search-train button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+}
+
+.search-train input {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.search-train button {
+    background: #facc15;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-train button:hover {
+    background: #ffcc00;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-box i {
+    font-size: 32px;
+    color: #facc15;
+    margin-bottom: 10px;
+}
+
+.feature-box h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Live Updates */
+.live-updates {
+    width: 100%;
+    background: #1e293b;
+    padding: 15px;
+    margin-top: 30px;
+    text-align: center;
+    color: #facc15;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Footer */
+.footer {
+    background: rgba(15, 15, 15, 0.9);
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/* Fade-in Animation */
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.train-status-container {
+    animation: fadeIn 0.8s ease-in-out;
+}
+.train-status-container h2 {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+
+/* Styles for Train Status Page */
+/* Container Styling */
+.status-container {
+    text-align: center;
+    margin: 30px auto;
+    padding: 25px;
+    max-width: 700px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Heading Styling */
+.status-container h2 {
+    color: #4e6a71;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: 600;
+}
+
+/* Paragraph Styling */
+.status-container p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+#trainStatusForm {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#trainStatusForm input {
+    width: 220px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #f1f1f1;
+    transition: all 0.3s ease;
+}
+
+#trainStatusForm input:focus {
+    border-color: #4e6a71;
+    background: #fff;
+}
+
+#trainStatusForm button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Helvetica', sans-serif;
+}
+
+#trainStatusForm button:hover {
+    background-color: #005f87;
+}
+
+/* Train Info Container */
+#trainInfo {
+    text-align: left;
+    margin-top: 20px;
+    padding: 20px;
+    background: #ececec;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.train-details p {
+    font-size: 18px;
+    color: #555;
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+/* Map Styling */
+#map-container {
+    margin-top: 25px;
+}
+
+#map {
+    width: 100%;
+    height: 350px;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Hidden Element Styling */
+.hidden {
+    display: none;
+}
+
+/* Header Styling */
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+header .logo h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #68b1b8;
+}
+
+
+/* Booking Form Section */
+.booking-form {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.booking-form h2 {
+    color: #4e6a71;
+    font-size: 32px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.booking-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Form Inputs */
+.booking-form input,
+.booking-form select {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f1f1f1;
+    transition: all 0.3s ease;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+    border-color: #4e6a71;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Label Styling */
+.booking-form label {
+    font-size: 18px;
+    font-weight: 500;
+    color: #444;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+/* Button Styling */
+.booking-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.booking-form button:hover {
+    background-color: #005f87;
+}
+
+/* Footer */
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .booking-form {
+        padding: 20px;
+    }
+
+    .booking-form h2 {
+        font-size: 28px;
+    }
+
+    .booking-form label {
+        font-size: 16px;
+    }
+}
+.scrolling-text {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    padding: 10px 0;
+    background: #f0f0f0;
+    color: #333;
+    font-weight: 500;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scroll 15s linear infinite;
+}
+
+
+@keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+/* Feedback Form Section */
+.feedback-form {
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: left;
+}
+
+.feedback-form h2 {
+    color: #1a1a2e;
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.feedback-form p {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.feedback-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.feedback-form label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Inputs and Select */
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+    border-color: #1a1a2e;
+    background-color: #fff;
+    outline: none;
+}
+
+/* Rating Stars */
+.rating {
+    display: flex;
+    justify-content: flex-start;
+    direction: rtl;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+.rating label {
+    font-size: 32px;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating input[type="radio"]:checked ~ label,
+.rating label:hover,
+.rating label:hover ~ label {
+    color: #f5b301;
+}
+
+/* Comments Box */
+.feedback-form textarea {
+    resize: none;
+    height: 120px;
+}
+
+/* Submit Button */
+.feedback-form button {
+    background: linear-gradient(to right, #1a1a2e, #16213e);
+    color: #fff;
+    padding: 14px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feedback-form button:hover {
+    background: linear-gradient(to right, #ffd700, #e6c200);
+    color: #1a1a2e;
+}
+
+/* Flash Messages */
+.flash-message {
+    background-color: #e0ffe0;
+    color: #2a662a;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a2e;
+    color: #dcdcdc;
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+    margin-top: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .feedback-form {
+        padding: 25px;
+        margin: 30px 15px;
+    }
+
+    .feedback-form h2 {
+        font-size: 26px;
+    }
+
+    .feedback-form p {
+        font-size: 16px;
+    }
+}

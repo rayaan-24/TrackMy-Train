@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Status - TrackMyTrain</title>
+
+    <!-- FIX: Flask static CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <!-- Google Maps API (same as old) -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQ5S7Xw0PZ-cNQIX4tbRyvFQRE2Z6gzzE&callback=initMap" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>🚆 TrackMy Train</h1>
+    </div>
+    <nav>
+        <ul>
+            <!-- FIX: Flask routing -->
+            <li><a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="{{ url_for('booking') }}"><i class="fas fa-ticket-alt"></i> Book Ticket</a></li>
+            <li><a href="{{ url_for('train_status') }}"><i class="fas fa-train"></i> Train Status</a></li>
+            <li><a href="{{ url_for('feedback') }}"><i class="fas fa-comment"></i> Feedback</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="status-container">
+    <h2>📍 Live Train Status</h2>
+    <p>Enter the train number to check its current status.</p>
+
+    <form id="trainStatusForm">
+        <input type="text" id="trainNumber" placeholder="Enter Train Number" required>
+        <button type="submit"><i class="fas fa-search"></i> Check Status</button>
+    </form>
+
+    <div id="trainInfo" class="hidden">
+        <h3>🚄 Train Details</h3>
+        <div class="train-details">
+            <p><strong>Train Name:</strong> <span id="trainName"></span></p>
+            <p><strong>Current Location:</strong> <span id="currentLocation"></span></p>
+            <p><strong>Arrival Time:</strong> <span id="arrivalTime"></span></p>
+            <p><strong>Departure Time:</strong> <span id="departureTime"></span></p>
+            <p><strong>Status:</strong> <span id="status"></span></p>
+        </div>
+        <div id="map-container">
+            <h4>Live Location</h4>
+            <div id="map" style="width: 100%; height: 300px;"></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2025 TrackMyTrain | All Rights Reserved.</p>
+</footer>
+
+<script>
+    function initMap() {
+        new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 12.9716, lng: 77.5946 },
+            zoom: 10
+        });
+    }
+
+    document.getElementById("trainStatusForm").addEventListener("submit", function (event) {
+        event.preventDefault();
+        const trainNumber = document.getElementById("trainNumber").value.trim();
+
+        const trainData = {
+            "12345": {
+                name: "Chennai Express",
+                location: "Katpadi",
+                arrival: "10:30 AM",
+                departure: "10:45 AM",
+                status: "On Time",
+                lat: 12.9698,
+                lng: 79.1449
+            },
+            "54321": {
+                name: "Bangalore Express",
+                location: "Ambur",
+                arrival: "11:15 AM",
+                departure: "11:30 AM",
+                status: "Delayed",
+                lat: 12.7916,
+                lng: 78.7164
+            }
+        };
+
+        if (trainData[trainNumber]) {
+            document.getElementById("trainInfo").classList.remove("hidden");
+            document.getElementById("trainName").innerText = trainData[trainNumber].name;
+            document.getElementById("currentLocation").innerText = trainData[trainNumber].location;
+            document.getElementById("arrivalTime").innerText = trainData[trainNumber].arrival;
+            document.getElementById("departureTime").innerText = trainData[trainNumber].departure;
+            document.getElementById("status").innerText = trainData[trainNumber].status;
+
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: {
+                    lat: trainData[trainNumber].lat,
+                    lng: trainData[trainNumber].lng
+                },
+                zoom: 12
+            });
+
+            new google.maps.Marker({
+                position: {
+                    lat: trainData[trainNumber].lat,
+                    lng: trainData[trainNumber].lng
+                },
+                map: map
+            });
+        } else {
+            alert("Train not found! Please enter a valid train number.");
+        }
+    });
+</script>
+
+</body>
+</html>
