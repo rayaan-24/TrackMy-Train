@@ -77,7 +77,49 @@ pip install flask mysql-connector-python
 
 4️⃣ Configure Database
 
-Create MySQL database trackmytrain_db
+🗄️ MySQL DATABASE & TABLES (RUN THIS)
+✅ Create Database
+CREATE DATABASE trackmytrain_db;
+USE trackmytrain_db;
+
+🚆 Trains Table
+CREATE TABLE trains (
+    train_id VARCHAR(10) PRIMARY KEY,
+    train_name VARCHAR(100),
+    source VARCHAR(50),
+    destination VARCHAR(50),
+    status VARCHAR(50),
+    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+🎟️ Bookings Table
+CREATE TABLE bookings (
+    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    passenger_name VARCHAR(100),
+    email VARCHAR(100),
+    train_id VARCHAR(10),
+    journey_date DATE,
+    seat_number VARCHAR(10),
+    class VARCHAR(20),
+    fare INT,
+    FOREIGN KEY (train_id) REFERENCES trains(train_id)
+);
+
+⭐ Feedback Table
+CREATE TABLE feedback (
+    feedback_id INT AUTO_INCREMENT PRIMARY KEY,
+    passenger_name VARCHAR(100),
+    Train_ID VARCHAR(10),
+    Rating INT,
+    Comments TEXT,
+    Date DATE
+);
+
+🚉 Stations Table
+CREATE TABLE stations (
+    station_id INT AUTO_INCREMENT PRIMARY KEY,
+    station_name VARCHAR(100)
+);
 
 Update credentials in:
 
@@ -104,7 +146,7 @@ http://127.0.0.1:5000/
 ![Train_status Screen](images/Train_status_page.png)
 
 ### 🔹 feedback Screen
-![feedback Screen](images/feedback.png)
+![feedback Screen](images/feedback_page.png)
 
 🎓 Academic Use
 
