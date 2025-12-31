@@ -65,7 +65,7 @@ stations – stores station names
 
 🚀 How to Run the Project Locally
 1️⃣ Clone the Repository
-git clone https://github.com/your-username/TrackMyTrain.git
+git clone https://github.com/rayaan-24/TrackMy-Train.git
 cd TrackMyTrain
 
 2️⃣ Create Virtual Environment (Optional)
