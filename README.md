@@ -1,4 +1,4 @@
-# 🚆 TrackMyTrain – Train Tracking & Ticket Booking System
+# 🚆 TrackMyTrain 
 
 TrackMyTrain is a **web-based train tracking and ticket booking application** developed using **Flask (Python)** and **MySQL**.  
 The project allows users to **check train status**, **book train tickets**, and **submit feedback** through a simple and user-friendly interface.
