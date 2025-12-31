@@ -159,7 +159,7 @@ http://127.0.0.1:5000/
 
 🎓 Academic Use
 
-Subject: DBMS / Web Development
+Subject: DBMS 
 
 Concepts Used:
 
