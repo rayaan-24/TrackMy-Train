@@ -170,15 +170,16 @@ REST APIs
 
 🔮 Future Enhancements
 
-User authentication (Login / Signup)
-Admin dashboard
-Real-time train data integration
-Online payment gateway
+User authentication (Login / Signup) ,
+Admin dashboard ,
+Real-time train data integration ,
+Online payment gateway ,
 Mobile application version
 
 👨‍💻 Author
 
-MOHAMMED RAYAAN N
+MOHAMMED RAYAAN N 
+
 BCA Student – VIT Vellore
 
 🔗 GitHub: https://github.com/rayaan-24
