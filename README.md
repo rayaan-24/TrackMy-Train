@@ -66,27 +66,29 @@ stations – stores station names
 🚀 How to Run the Project Locally
 
 1️⃣ Clone the Repository
+```
 git clone https://github.com/rayaan-24/TrackMy-Train.git
 cd TrackMyTrain
-
+```
 2️⃣ Create Virtual Environment (Optional)
+```
 python -m venv venv
 venv\Scripts\activate
-
+```
 3️⃣ Install Dependencies
+```
 pip install flask mysql-connector-python
-
+```
 4️⃣ Configure Database
 
 🗄️ MySQL DATABASE & TABLES (RUN THIS)
 ✅ Create Database
-
+```
 CREATE DATABASE trackmytrain_db;
-
 USE trackmytrain_db;
-
+```
 🚆 Trains Table
-
+```
 CREATE TABLE trains (
     train_id VARCHAR(10) PRIMARY KEY,
     train_name VARCHAR(100),
@@ -95,9 +97,9 @@ CREATE TABLE trains (
     status VARCHAR(50),
     last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
+```
 🎟️ Bookings Table
-
+```
 CREATE TABLE bookings (
     booking_id INT AUTO_INCREMENT PRIMARY KEY,
     passenger_name VARCHAR(100),
@@ -109,9 +111,9 @@ CREATE TABLE bookings (
     fare INT,
     FOREIGN KEY (train_id) REFERENCES trains(train_id)
 );
-
+```
 ⭐ Feedback Table
-
+```
 CREATE TABLE feedback (
     feedback_id INT AUTO_INCREMENT PRIMARY KEY,
     passenger_name VARCHAR(100),
@@ -120,27 +122,27 @@ CREATE TABLE feedback (
     Comments TEXT,
     Date DATE
 );
-
+```
 🚉 Stations Table
-
+```
 CREATE TABLE stations (
     station_id INT AUTO_INCREMENT PRIMARY KEY,
     station_name VARCHAR(100)
 );
-
+```
 Update credentials in:
 
 database/db_connection.py
 
 5️⃣ Run the Application
+```
 python app.py
-
-
+```
 Open in browser:
-
+```
 http://127.0.0.1:5000/
 
-
+```
 ## 📸 Application Screenshots
 
 ### 🔹 Home Screen
