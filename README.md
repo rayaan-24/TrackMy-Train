@@ -44,7 +44,9 @@ TrackMyTrain/
 ├── static/
 │   ├── css/
 │   │   └── styles.css
-│   └── images/
+│   ├── js/
+│   │   └── script.js
+│   └── logo/
 │       └── favicon.ico
 │
 ├── database/
