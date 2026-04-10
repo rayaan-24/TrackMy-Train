@@ -170,14 +170,6 @@ Flask Routing
 Template Rendering
 REST APIs
 
-🔮 Future Enhancements
-
-User authentication (Login / Signup) ,
-Admin dashboard ,
-Real-time train data integration ,
-Online payment gateway ,
-Mobile application version
-
 👨‍💻 Author
 
 MOHAMMED RAYAAN N 
